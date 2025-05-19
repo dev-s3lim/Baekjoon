@@ -10,6 +10,6 @@ public class Main {
         int a = Integer.parseInt (inputs[0]);
         int b = Integer.parseInt (inputs[1]);
 
-        System.out.printf ("%.9f\n", (double) a / b);
+        System.out.println((double) a / b);
     }
 }

@@ -6,9 +6,9 @@ public class Main {
     public static void main (String [] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s[] = br.readLine().split(" ");
-        int auth = 0;
+       int auth = 0;
 
-        for (int i = 0; i < 5 ; i++) {
+        for (int i = 0; i < s.length ; i++) {
             int n = Integer.parseInt(s[i]);
             auth += (n*n);
 

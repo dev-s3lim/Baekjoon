@@ -1,15 +1,15 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) {
-        int i;
-        int a;
+    public static void main (String [] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s[] = br.readLine().split(" ");
+        int n = Integer.parseInt(s[0]);
 
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-
-        for (i = 1; i < 10; i++){
-            System.out.println (n+" "+"*"+" "+i+" = "+n*i);
+        for (int i = 1; i <= 9; i++){
+            System.out.println(n + " * " + i + " = " + (n*i));
         }
     }
 }

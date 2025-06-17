@@ -8,12 +8,12 @@
         int n = Integer.parseInt(br.readLine());
 
         for (int i = 1 ; i < n+1; i++){
-            cards.offer(i);
+            cards.add(i);
         }
 
         while(cards.size() > 1){
-            cards.pollFirst();
-            cards.offerLast(cards.pollFirst());
+            cards.poll();
+            cards.addLast(cards.poll());
         }
 
         System.out.println(cards.peek());

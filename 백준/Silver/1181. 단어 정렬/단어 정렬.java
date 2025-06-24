@@ -4,39 +4,30 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        List<String> list = new ArrayList<>();
-        Set<String> mySet = new HashSet<>();
         int n = Integer.parseInt(br.readLine());
+
+        Set<String> tree = new TreeSet<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                if (o1.length() - o2.length() == 0) {
+                    return o1.compareTo(o2);
+                } else {
+                    return o1.length() - o2.length();
+                }
+            }
+        });
 
         for (int i = 0; i < n; i++){
             String v = br.readLine();
-            mySet.add(v);
+            tree.add(v);
         }
-
-        for(String s : mySet){
-            list.add(s);
-        }
-
-        Collections.sort(list, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
-
-        Collections.sort(list, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.length() - o2.length();
-            }
-        });
 
         StringBuilder sb = new StringBuilder();
 
-        for (String a : list){
-            sb.append(a).append("\n");
+        for (String c : tree){
+            sb.append(c).append("\n");
         }
 
-        System.out.print(sb);
+        System.out.println(sb);
     }
 }
